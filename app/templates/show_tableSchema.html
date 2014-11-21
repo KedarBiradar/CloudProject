@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--div id="content"-->
+{% if error == False %}
+	<h4>List of all columns in table</h4>
+	<form action="/showTableContentCol/{{keyspace}}/{{column_family}}" method="GET" accept-charset="UTF-8">
+	<br>
+<table class="dbTable" style = "margin-bottom:20px;margin-right:20px;margin-left:50px;">
+			{% set i = 0 %}
+			{% set numofcols = 3 %}
+			{% set columns = result|length %}
+				{%for i in range(0,columns,numofcols) %}
+				<tr>
+					{% for j in range(0,numofcols) %}
+						{% if i+j < columns %}
+				<td class="tableview" align=left>
+					<div>
+					<input type="checkbox" name=" {{ result[i+j] }}" id="{{ result[i+j] }}" value="{{ result[i+j] }}">
+					<label for="{{ result[i+j] }}">{{ result[i+j].upper() }}</label>
+					</div>	
+				</td>
+						{%  endif %}
+					{% endfor%}
+				</tr>
+				{% endfor %}
+		</table>
+		</br>
+		<input class="submit" type="submit" value="submit">
+	</form>
+
+{% else %}
+	<h2> Error </h2>
+		{{ errorMsg }}
+{% endif %}
+
+</div>
+{% endblock %}

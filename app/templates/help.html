@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2> Guidelines for using this project
+</h2>
+<ul style="text-align: justify;text-justify: inter-word;">
+<li><h3>Requirements</h3>
+<ol>
+<li><b>1.</b> Pythonn 2.7 or above</li>
+<li><b>2.</b> Flask Framework</li>
+<li><b>3.</b> Cassandra Python Driver</li>
+</ol>
+<br><br>
+<li><h3>Nodes</h3>
+<ol>
+<li><b>1.</b> Nodes are the cassandra database servers. </li>
+<li><b>2.</b> you can add a new node by providing IP address. </li> 
+<li><b>3.</b> By default it uses localhost as cassandra database server.</li>
+</ol>
+<br><br>
+<li><h3>Keyspaces</h3>
+<ol style="text-align: justify;text-justify: inter-word;">
+<li><b>1.</b> Keyspace are the container for your application data, similar to a schema in a relational database.</li>
+<li><b>2.</b> This part of project will fetch all keyspaces available at given cluster node of cassandra database. </li>
+<li><b>3.</b> On clicking on particular keyspace it will lead you to column families in that keyspace.</li>
+<li><b>4.</b> By clicking on particluar column family, this tool will fetch all rows from that column family.</li>
+</ol>
+
+<br><br>
+<li style="text-align: justify;text-justify: inter-word;"><h3>Column Families</h3>
+<ol>
+<li><b>1.</b> In this section, all column families fom all the keyspaces which are present at given cluster node are fetched. </li>
+<li><b>2.</b> If you are interested in column family of particular keyspace then go to keyspace tab. </li>
+<li><b>3.</b> On clicking on column family name it will redirect to page that provide schema of that column family. </li>
+<li><b>4.</b> Here you can choose which attribute you want to fetch and then submit the query. The tool will fetch you all rows with given columns</li>
+</ol>
+<br><br>
+<p>To know more about Cassandra Database please visit <a href="http://cassandra.apache.org/">Apache Cassandra</a>
+<br>
+{% endblock %}

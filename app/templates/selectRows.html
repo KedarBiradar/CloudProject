@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--div id="content"-->
+{% if error == False %}
+	<h4>{{ tableName.upper() }} </h4>
+	<!--form method = "POST" accept-charset="UTF-8" /-->
+			<table style = "margin-bottom:20px;margin-right:20px;">
+				{% for item in columns %}
+		    			<col align="center">
+			  	{% endfor %}
+		    		<tr>
+					{% for item in columns %}
+		    				<th style="border: 2px solid black" width="100px" > {{ item.upper() }} </th>
+			  	     	{% endfor %}
+				</tr>
+				{% for r in result %}				
+					<tr>
+						{% for item in r %}
+			    				<th style="border: 2px solid black" width="100px" > {{ item }} </th>
+				  	     	{% endfor %}
+					</tr>
+				{% endfor %}		
+	  	     	</table>      	
+	<!--/form-->
+{% else %}
+	<h2> Error </h2>
+		{{ errorMsg }}
+{% endif %}
+{% endblock %}

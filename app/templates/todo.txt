@@ -1,0 +1,9 @@
+Done
+	1. page not found validation
+	2. IP not connecting validation
+	3. exception handling in every function in backend
+	
+todo
+1. validation not done in http://localhost:5000/showTableSchema
+2. validation not done in URL. check exhaustively
+

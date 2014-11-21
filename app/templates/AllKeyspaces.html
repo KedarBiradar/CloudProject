@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if error == False %}
+		<table class="dbTable" style = "margin-bottom:20px;margin-right:20px;margin-left:50px;">
+			{% set i = 0 %}
+			{% set numofDB = 3 %}
+			{% set keys = keyspaces|length %}
+				{%for i in range(0,keys,numofDB) %}
+				<tr>
+					{% for j in range(0,numofDB) %}
+						{% if i+j < keys %}
+				    		<td class="dbview" align=center>
+						<div class="">
+						<a href="/ShowKeySpace/{{ keyspaces[i+j] }}">						 
+							<img class="dbimg" src="../static/images/db.png"></b>
+				<div>		 
+				<a href="/ShowKeySpace/{{ keyspaces[i+j] }}" style="text-decoration:none;">{{ keyspaces[i+j].upper() }}
+				</div>
+						</div>
+						</td>
+						{%  endif %}
+					{% endfor%}
+				</tr>
+				{% endfor %}
+		</table>
+{% else %}
+	<h2> Error </h2>
+		{{ errorMsg }}
+{% endif %}
+{% endblock %}

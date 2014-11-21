@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="content">
+
+{% if error == False %}
+
+	<!--h4 align=center>List of all column families</h4-->
+		<table class="dbTable" style = "margin-bottom:20px;margin-right:20px;margin-left:50px;">
+			{% set i = 0 %}
+			{% set numofTables = 6 %}
+			{% set tab = tables|length %}
+				{%for i in range(0,tab,numofTables) %}
+				<tr>
+					{% for j in range(0,numofTables,2) %}
+						{% if i+j < tab %}
+				    		<td class="tableview" align=center>
+						<div class="">
+				<a href="/showTableSchema/{{tables[i+j]}}/{{ tables[i+j+1]}}">						 
+					<img class="tableimg" src="../static/images/table.png"></b>
+			<div>
+		 <a href="/showTableSchema/{{tables[i+j]}}/{{ tables[i+j+1]}}" style="text-decoration:none;">{{ tables[i+j+1].upper() }}
+			</div>	
+			</div>
+						</td>
+						{%  endif %}
+					{% endfor%}
+				</tr>
+				{% endfor %}
+		</table>   	   			
+
+{% else %}
+	<h2> Error </h2>
+		{{ errorMsg }}
+{% endif %}
+</div>
+{% endblock %}

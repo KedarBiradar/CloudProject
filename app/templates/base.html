@@ -1,0 +1,26 @@
+<html>
+ 	<head>
+	{% if title %}
+ 		<title>{{ title }}</title>
+	{% else %}
+		<title> Cassandra Browser Tool </title>
+	{% endif %}
+	<body>
+		<div><h1>Cassandra Browser Tool<h1></div>
+
+			<div id="menu">
+				<ul>
+					<li class="current_page_item">
+					<a href="/">Home</a></li>
+					<li><a href="/showAllKeyspaces">Get Started</a></li>
+					<li><a href="http://cassandra.apache.org/">About Cassandra</a></li>
+					<li><a href="/">About the tool</a></li>
+					<li><a href="/aboutUs">About Us</a></li>
+				</ul>
+			</div>
+		<hr>
+	{% block content %}
+
+	{% endblock %}
+  </body>
+</html>

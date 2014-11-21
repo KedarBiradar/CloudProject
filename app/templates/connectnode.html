@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if error == False %}
+	<h4>Connected to Node {{ node }}</h4>
+{% else %}
+  	<h2>	Error </h2>
+	 {{ errorMsg }}	
+{% endif %}
+{% endblock %}

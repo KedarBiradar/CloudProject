@@ -1,0 +1,17 @@
+{{ pagination.info|safe }}
+{{ pagination.links|safe }}
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in range(0,100) %}
+    {% endfor %}
+  </tbody>
+</table>
+{{ pagination.links|safe }}
+

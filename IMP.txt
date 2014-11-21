@@ -1,0 +1,2 @@
+http://stackoverflow.com/questions/23625481/paging-resultsets-in-cassandra-with-compound-primary-keys-missing-out-on-rows
+http://flask.pocoo.org/docs/0.10/quickstart/

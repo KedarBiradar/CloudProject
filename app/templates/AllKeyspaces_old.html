@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+		<table style = "margin-bottom:20px;margin-right:20px;margin-left:50px;">
+		    	<tr>
+		    		<td class="dbview" style="width:150px;">
+						 <img class="dbimg" src="../static/images/db.png" style="width:150px;height:150px">
+				</td>
+				<td class="dbview" style="width:150px;">
+						 <img class="dbimg" src="../static/images/db.png" style="width:150px;height:150px">
+				</td>
+				<td class="dbview" style="width:150px;">
+						 <img class="dbimg" src="../static/images/db.png" style="width:150px;height:150px">
+				</td>
+			</tr>		
+		</table>   
+
+		{% for ks in keyspaces %}
+			<div>
+		   		<p> <a href="/ShowKeySpace/{{ ks }}">{{ ks.upper() }}</b></p>
+			</div>
+		{% endfor %}
+{% endblock %}

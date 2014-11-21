@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="content">
+
+{% if result %}
+	<h4>List of all column families</h4>
+	<form method = "POST" accept-charset="UTF-8" />
+			<table>
+		     	{% for item in result %}
+		    		<tr>
+		    			<td ><label><a href="/showTableSchema/{{keyspaceName}}/{{item}}"> {{ item.upper() }} </a></label></td>
+		    		</tr>
+	  	     	{% endfor %}
+	  	     	</table>      	
+	</form>
+{% else %}
+  	<h1>	{{result}} : {{ error }}	</h1>
+{% endif %}
+
+</div>
+{% endblock %}

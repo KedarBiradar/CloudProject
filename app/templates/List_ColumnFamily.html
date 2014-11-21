@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="content">
+{% if error == False %}
+	<h4 align=center>List of all column families</h4>
+			<table class="dbTable" style = "margin-bottom:20px;margin-right:20px;margin-left:50px;">
+			{% set i = 0 %}
+			{% set numofTables = 3 %}
+			{% set tables = result|length %}
+				{%for i in range(0,tables,numofTables) %}
+				<tr>
+					{% for j in range(0,numofTables) %}
+						{% if i+j < tables %}
+				    		<td class="tableview" align=center>
+						<div class="">
+				<a href="/showTableContent/{{keyspaceName}}/{{ result[i+j]}}">						 
+					<img class="tableimg" src="../static/images/table.png"></b>
+			<div>
+		   	<a href="/showTableContent/{{keyspaceName}}/{{ result[i+j]}}" style="text-decoration:none;">{{ result[i+j].upper() }}
+			</div>	
+			</div>
+						</td>
+						{%  endif %}
+					{% endfor%}
+				</tr>
+				{% endfor %}
+		</table>
+{% else %}
+  	<h2>	Error </h2>
+		{{ errorMsg }}	
+{% endif %}
+
+</div>
+{% endblock %}
