@@ -20,4 +20,3 @@ Architecture
     -Request to Web server for connecting cassandra Node
     -Display existing keyspaces
     -Display column_families of particular Keyspace
-    
